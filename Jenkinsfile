@@ -10,11 +10,11 @@ pipeline {
         }
 
         // Etapa 2: Instalar dependencias
-        // stage('Install Dependencies') {
-        //     steps {
-        //         bat 'npm install'  // en Windows es bat
-        //     }
-        // }
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'  // en Windows es bat
+            }
+        }
 
         // Etapa 3: Análisis OWASP
         stage('Análisis de Dependencias') {
@@ -26,10 +26,10 @@ pipeline {
         }
 
         // Etapa 4: Ejecutar tests
-        // stage('Test') {
-        //     steps {
-        //         bat 'npm test'
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
+        }
     }
 }
