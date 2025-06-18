@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        // Etapa 1: Clonar repositorio
-        // stage('Checkout') {
-        //     steps {
-        //         git branch: 'main', url: 'https://github.com/Arzakat/safenotes.git'
-        //     }
-        // }
+        //Etapa 1: Clonar repositorio
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Arzakat/safenotes.git'
+            }
+        }
 
         // Etapa 2: Instalar dependencias
         // stage('Install Dependencies') {
