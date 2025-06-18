@@ -21,7 +21,7 @@ pipeline {
             steps {
                 bat 'mkdir dependency-check-report'
                 tool 'mi-primer-dependency-check'
-                dependencyCheck odcInstallation: 'mi-primer-dependency-check', additionalArguments: '--project 'saludoapp' --scan "target" --format "HTML" --out "dependency-check-report" --enableExperimental'
+                dependencyCheck odcInstallation: 'mi-primer-dependency-check', additionalArguments: '--project 'safenotes' --scan "target" --format "HTML" --out "dependency-check-report" --enableExperimental'
             }
         }
 
