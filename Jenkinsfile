@@ -20,8 +20,11 @@ pipeline {
         stage('Análisis de Dependencias') {
             steps {
                 bat 'if not exist "dependency-check-report" mkdir "dependency-check-report"'
-                tool 'mi-primer-dependency-check'
-                dependencyCheck odcInstallation: 'mi-primer-dependency-check', additionalArguments: '--project "safenotes" --scan "target" --format "HTML" --format "XML" --out "dependency-check-report" --enableExperimental'
+                //tool 'mi-primer-dependency-check'
+                dependencyCheck(
+                    odcInstallation: 'mi-primer-dependency-check',
+                    additionalArguments: '--project "safenotes" --scan "." --format HTML --format XML --out "./dependency-check-report" --enableExperimental --nodeAuditSkipDevDependencies false'
+                )
             }
         }
 
